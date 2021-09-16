@@ -1,9 +1,9 @@
 import './RandomPrompt.css';
 
-const RandomPrompt = () => {
+const RandomPrompt = ({randomPrompt}) => {
   return (
       <div className="random-prompt-generator">
-          <h3>An environmental scientist in a war-torn desert who wants revenge </h3>
+          <h3>{randomPrompt.character} {randomPrompt.problem} {randomPrompt.seeting}</h3>
       </div>
   )
 }

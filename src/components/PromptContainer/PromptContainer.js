@@ -1,7 +1,8 @@
 import './PromptContainer.css';
 import '../PromptCard/PromptCard';
+import React, { Component } from 'react';
 
-const PromptContainer = () => {
+class PromptContainer extends Component {
 
     // const promptsCollection = this.props.prompts.map(prompt => {
     //     return (
@@ -12,13 +13,14 @@ const PromptContainer = () => {
     //       />
     //     )
     //   })
-    
-        return (
-          <div className='prompts-collection'>
-              <h4>Test Card Prompt</h4>
-            {/* {promptsCollection} */}
-          </div>
-        )
+  render(){
+    return (
+     <div className='prompts-collection'>
+         <h4>No saved prompts !</h4>
+       {/* {promptsCollection} */}
+     </div>
+   )
+  }
 }
 
 export default PromptContainer;

@@ -4,14 +4,16 @@ import PromptSection from '../PromptSection/PromptSection';
 import PromptContainer from '../PromptContainer/PromptContainer';
 import Error from '../Error/Error';
 import { Route, Switch } from 'react-router-dom';
+import promptsData from '../prompts-data'
 
 const App = () => {
+  console.log(promptsData)
   return (
     <div className="App">
       <Header />
-      <main classname="main-section">
+      <main className="main-section">
         <Switch>
-          <Route exact path="/home" render={ () =>  <PromptSection />}/>
+          <Route exact path="/" render={ () =>  <PromptSection />}/>
           <Route exact path="/saved-prompts" render={ () => <PromptContainer />}/>
           <Route path="*" render={() => <Error />}/>
         </Switch>
