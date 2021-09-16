@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Navigation = () => {
   return (
       <div className="navigation-section">
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <button className="nav-btns">Home View</button>
         </Link>
-        <Link to={"/home/saved-prompts"}>
+        <Link to={"/saved-prompts"}>
           <button className="nav-btns">Saved Prompts</button>
         </Link>
       </div>
