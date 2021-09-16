@@ -23,7 +23,7 @@ class PromptForm extends Component {
         return (
             <div className="prompt-form-section">
                 <form>
-                <textarea className="writing-prompt" placeholder='Keep writing...' rows="10" cols="100">
+                <textarea className="writing-prompt" placeholder='Keep writing...' rows="10" cols="100" name='prompt'>
                 </textarea>
                 <input
                   type='text'

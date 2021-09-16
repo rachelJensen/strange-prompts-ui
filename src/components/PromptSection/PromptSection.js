@@ -23,7 +23,6 @@ class PromptSection extends Component {
   }
 
   render() {
-    // console.log(this.createRandomPrompt())
     return (
        <div className="prompt-section">
            <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
