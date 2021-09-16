@@ -8,16 +8,21 @@ class PromptSection extends Component {
   constructor(){
     super()
     this.state = {
-      promptsData: [],
-      randomPrompt: ''
+      promptsData: promptsData
     }
   }
 
+  createRandomPrompt = () => {
+    const randomNum = Math.floor(Math.random() * this.state.promptsData.length + 1);
+    return this.state.promptsData[randomNum];
+  }
+
   render() {
+    // console.log(this.createRandomPrompt())
     return (
        <div className="prompt-section">
            <button>Generate New Prompt</button>
-           <RandomPrompt />
+           <RandomPrompt randomPrompt={this.createRandomPrompt()}/>
            <PromptForm />
        </div>
     )

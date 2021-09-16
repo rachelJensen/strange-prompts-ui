@@ -16,7 +16,7 @@ class PromptContainer extends Component {
   render(){
     return (
      <div className='prompts-collection'>
-         <h4>Test Card Prompt</h4>
+         <h4>No saved prompts !</h4>
        {/* {promptsCollection} */}
      </div>
    )
