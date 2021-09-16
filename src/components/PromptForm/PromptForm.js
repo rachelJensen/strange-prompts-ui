@@ -1,6 +1,6 @@
 import './PromptForm.css';
 import React, { Component } from "react";
-import React, { useState } from "react";
+
 
 class PromptForm extends Component {
     constructor() {
@@ -23,7 +23,7 @@ class PromptForm extends Component {
         return (
             <div className="prompt-form-section">
                 <form>
-                <textarea className="writing-prompt" rows="10" cols="100">
+                <textarea className="writing-prompt" placeholder='Keep writing...' rows="10" cols="100">
                 </textarea>
                 <input
                   type='text'

@@ -12,7 +12,7 @@ const App = () => {
       <main classname="main-section">
         <Switch>
           <Route exact path="/home" render={ () =>  <PromptSection />}/>
-          <Route exact path="/saved-prompts" render={ () => <PromptContainer />}/>
+          <Route exact path="/home/saved-prompts" render={ () => <PromptContainer />}/>
           <Route path="*" render={() => <Error />}/>
         </Switch>
       </main>
