@@ -52,7 +52,7 @@ class PromptSection extends Component {
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
            <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
            <button onClick={this.saveFavorite}>Add to favorites</button>
-           <PromptForm />
+           {/* <PromptForm /> */}
        </div>
     )
   }
