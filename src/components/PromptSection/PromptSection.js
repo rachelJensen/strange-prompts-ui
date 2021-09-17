@@ -2,32 +2,53 @@ import './PromptSection.css';
 import React, { Component } from 'react';
 import PromptForm from '../PromptForm/PromptForm';
 import RandomPrompt from '../RandomPrompt/RandomPrompt';
-import promptsData from '../prompts-data'
+import getData from '../utils';
 
 class PromptSection extends Component {
   constructor(){
     super()
     this.state = {
-      promptsData: promptsData,
-      randomPrompt:'',
+      promptsData: [],
+      randomPrompt: {},
+      // error: ''
     }
   }
 
   componentDidMount() {
-    this.createRandomPrompt();
+    getData('https://strange-prompts-api.herokuapp.com/api/v1/prompts')
+      .then (data => this.setState({ promptsData: data }))
+      .then(data => this.createRandomPrompt())
+      .catch(err => console.log(err))
   }
 
   createRandomPrompt = () => {
-    const randomNum = Math.floor(Math.random() * this.state.promptsData.length + 1);
-    this.setState({randomPrompt: this.state.promptsData[randomNum]})
+    const fragments = ['character', 'setting', 'problem'];
+
+    const prompt = fragments.reduce((acc, fragment) => {
+      let index = this.assignRandomIndex();
+      acc[fragment] = this.state.promptsData[index][fragment];
+ 
+      return acc;
+    }, {})
+
+    this.setState({ randomPrompt: prompt });
+  }
+
+  assignRandomIndex = () => {
+    return Math.floor(Math.random() * this.state.promptsData.length);
+  }
+
+  saveFavorite = () => {  
+    //This needs to the a post request that adds this.state.randomPrompt to the favorites table
   }
 
   render() {
     return (
        <div className="prompt-section">
-           <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
-           <PromptForm />
+           <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
+           <button onClick={this.saveFavorite}>Add to favorites</button>
+           {/* <PromptForm /> */}
        </div>
     )
   }
