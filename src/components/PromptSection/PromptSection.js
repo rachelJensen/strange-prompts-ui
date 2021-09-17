@@ -10,26 +10,34 @@ class PromptSection extends Component {
     super()
     this.state = {
       promptsData: [],
-      randomPrompt:'',
-      error: ''
+      randomPrompt: {},
+      // error: ''
     }
   }
 
   componentDidMount() {
-    //add fetch call her and assign data to state.promptsData
     getData('https://strange-prompts-api.herokuapp.com/api/v1/prompts')
       .then (data => this.setState({ promptsData: data }))
       .then(data => this.createRandomPrompt())
-      .catch(err => this.setState({ error: err }))
-
+      .catch(err => console.log(err))
   }
 
   createRandomPrompt = () => {
-    const randomNum = Math.floor(Math.random() * this.state.promptsData.length + 1);
-    this.setState({randomPrompt: this.state.promptsData[randomNum]})
+    const fragments = ['character', 'setting', 'problem'];
+
+    const prompt = fragments.reduce((acc, fragment) => {
+      let index = this.assignRandomIndex();
+      acc[fragment] = this.state.promptsData[index][fragment];
+      acc.indices.push(index); 
+      return acc;
+    }, {indices: []})
+
+    this.setState({ randomPrompt: prompt });
   }
 
-
+  assignRandomIndex = () => {
+    return Math.floor(Math.random() * this.state.promptsData.length);
+  }
 
   render() {
     return (
