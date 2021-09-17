@@ -11,7 +11,8 @@ class PromptSection extends Component {
     this.state = {
       promptsData: [],
       randomPrompt: {},
-      // error: ''
+      // error: '',
+      favorites: []
     }
   }
 
@@ -39,11 +40,18 @@ class PromptSection extends Component {
     return Math.floor(Math.random() * this.state.promptsData.length);
   }
 
+  saveFavorite = () => {
+    const fav = this.state.randomPrompt.indices;
+    this.setState({ favorites: [...this.state.favorites, fav]})
+    // console.log(fav, this.state.favorites)
+  }
+
   render() {
     return (
        <div className="prompt-section">
-           <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
+           <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
+           <button onClick={this.saveFavorite}>Add to favorites</button>
            <PromptForm />
        </div>
     )
