@@ -2,7 +2,6 @@ import './PromptSection.css';
 import React, { Component } from 'react';
 import PromptForm from '../PromptForm/PromptForm';
 import RandomPrompt from '../RandomPrompt/RandomPrompt';
-// import promptsData from '../prompts-data';
 import getData from '../utils';
 
 class PromptSection extends Component {
@@ -11,8 +10,7 @@ class PromptSection extends Component {
     this.state = {
       promptsData: [],
       randomPrompt: {},
-      // error: '',
-      favorites: []
+      // error: ''
     }
   }
 
@@ -29,9 +27,9 @@ class PromptSection extends Component {
     const prompt = fragments.reduce((acc, fragment) => {
       let index = this.assignRandomIndex();
       acc[fragment] = this.state.promptsData[index][fragment];
-      acc.indices.push(index); 
+ 
       return acc;
-    }, {indices: []})
+    }, {})
 
     this.setState({ randomPrompt: prompt });
   }
@@ -40,10 +38,8 @@ class PromptSection extends Component {
     return Math.floor(Math.random() * this.state.promptsData.length);
   }
 
-  saveFavorite = () => {
-    const fav = this.state.randomPrompt.indices;
-    this.setState({ favorites: [...this.state.favorites, fav]})
-    // console.log(fav, this.state.favorites)
+  saveFavorite = () => {  
+    //This needs to the a post request that adds this.state.randomPrompt to the favorites table
   }
 
   render() {
