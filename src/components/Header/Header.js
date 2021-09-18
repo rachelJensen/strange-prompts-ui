@@ -4,7 +4,7 @@ import Navigation from '../Navigation/Navigation';
 const Header = () => {
   return (
       <div className="header-section">
-          <h1>Header Section</h1>
+          {/* <h1>Header Section</h1> */}
           <Navigation />
       </div>
   )

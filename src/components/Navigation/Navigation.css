@@ -1,8 +1,27 @@
 .navigation-section {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    /* width: 100vw; */
+    display: flex;
 }
 
 .nav-btns {
-    margin: 1% 5% 1% 5%;
+    /* margin: 1% 5% 1% 5%; */
+    padding: 0px;
+    margin: 0px;
     width: 13%;
 }
+h1 {
+   font-family: 'Slabo 27px', serif;
+   color: white;
+}
+
+.bookmark {
+  display:flex;
+  width: 0px;
+  height: 120px;
+  border: 60px solid #ca3c3c;
+  border-top: 0;
+  border-bottom: 36px solid transparent;
+
+}
+
