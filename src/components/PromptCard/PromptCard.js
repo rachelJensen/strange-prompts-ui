@@ -5,6 +5,7 @@ const PromptCard = ({id, character, setting, problem}) => {
       <div className="prompt-card-section" key={id}>
           {/* <h4>PromptCard Section</h4> */}
           <p>{character} {setting} {problem}</p>
+          <button className='delete-btn'>delete</button>
       </div>
   )
 }
