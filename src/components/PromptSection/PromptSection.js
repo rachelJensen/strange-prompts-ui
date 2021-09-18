@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PromptForm from '../PromptForm/PromptForm';
 import RandomPrompt from '../RandomPrompt/RandomPrompt';
 // import promptsData from '../prompts-data';
-import getData from '../utils';
+import { getData, postData } from '../utils';
 
 class PromptSection extends Component {
   constructor(){
@@ -28,7 +28,7 @@ class PromptSection extends Component {
     const prompt = fragments.reduce((acc, fragment) => {
       let index = this.assignRandomIndex();
       acc[fragment] = this.state.promptsData[index][fragment];
-      acc.indices.push(index)
+      acc.indices.push(index + 1)
       return acc;
     }, {indices: []})
 
@@ -40,12 +40,17 @@ class PromptSection extends Component {
   }
 
   saveFavorite = () => {
-    // const fav = this.state.randomPrompt.indices;
-    // this.setState({ favorites: [...this.state.favorites, fav]})
+    const indices = this.state.randomPrompt.indices
+    const formattedFave = {
+      character: indices[0],
+      setting: indices[1],
+      problem: indices[2]
+    }
 
-    console.log(this.state.randomPrompt)
+    console.log(formattedFave)
     
-    //This actually needs to the a post request that adds this.state.randomPrompt to the favorites table
+    //getting a cors error, but is hitting the API
+    postData('https://strange-prompts-api.herokuapp.com/api/v1/favorites', formattedFave)
   }
 
   render() {

@@ -1,7 +1,7 @@
 import './PromptContainer.css';
 import PromptCard from '../PromptCard/PromptCard'
 import React, { Component } from 'react';
-import getData from '../utils';
+import { getData } from '../utils';
 
 
 class PromptContainer extends Component {
@@ -14,11 +14,7 @@ class PromptContainer extends Component {
     }
   }
 
-  componentDidMount = () => {
-    // getData('https://strange-prompts-api.herokuapp.com/api/v1/favorites')
-    //   .then(data => this.setState({ favorites: data }))
-    //   .then(data => console.log(this.state.favorites, '<<favorites'))
-      
+  componentDidMount = () => {      
     getData('https://strange-prompts-api.herokuapp.com/api/v1/prompts')
       .then(data => this.setState({ allPrompts: data }))
       .then(data => getData('https://strange-prompts-api.herokuapp.com/api/v1/favorites')
@@ -33,7 +29,7 @@ class PromptContainer extends Component {
         id: prompt.id,
         character: this.state.allPrompts[prompt.character].character,
         setting: this.state.allPrompts[prompt.setting].setting,
-        problem: this.state.allPrompts[prompt.problem].problem
+        problem: this.state.allPrompts[prompt.problem -1].problem
       }
     })
   }
