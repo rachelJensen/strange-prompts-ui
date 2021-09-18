@@ -46,8 +46,8 @@ class PromptContainer extends Component {
     this.makeFetch()
   }
 
-  render = () => {
-    const faveCards = this.state.favorites.map(compiled => {
+  createPromptCard() {
+    return this.state.favorites.map(compiled => {
       return (
           <PromptCard
             id={compiled.id}
@@ -59,10 +59,12 @@ class PromptContainer extends Component {
           />
         )
     })
-
+  }
+ 
+  render = () => {
     return (
      <div className='prompts-collection'>
-        {!this.state.favorites ? <h3>Loading…</h3> : faveCards}
+        {!this.state.favorites ? <h3>Loading…</h3> : this.createPromptCard()}
      </div>
    )
   }
