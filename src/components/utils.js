@@ -24,6 +24,21 @@ const postData = async (url, body) => {
   }
 }
 
+const deleteData = async (id) => {
+  const url = `http://localhost:3001/api/v1/reservations/${id}`
+  try {
+      const res = await fetch(url, {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+      return await res.json();
+  } catch (err) {
+      return console.log(err);
+  }
+}
 
 
-export { getData, postData };
+
+export { getData, postData, deleteData};
