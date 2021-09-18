@@ -1,26 +1,27 @@
-const getData = (url) => {
-  return fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`error ${response.status}`)
-      }
-    })
+const getData = async (url) => {
+  const response = await fetch(url);
+  if (response.ok) {
+    return response.json();
+  } else {
+    return Promise.reject(`error ${response.status}`);
+  }
 } 
 
 
-const postData = (url, body) => {
-  return fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-  .then(res => res.json())
-  .then(res => console.log(res))
-  .catch(error => console.log(error))
+const postData = async (url, body) => {
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    const res_1 = await res.json();
+    return console.log(res_1);
+  } catch (error) {
+    return console.log(error);
+  }
 }
 
 
