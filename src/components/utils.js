@@ -24,18 +24,19 @@ const postData = async (url, body) => {
   }
 }
 
-const deleteData = async (id) => {
-  const url = `http://localhost:3001/api/v1/reservations/${id}`
+const deleteData = async (url, id) => {
   try {
-      const res = await fetch(url, {
-          method: 'DELETE',
-          headers: {
-              'Content-Type': 'application/json'
-          }
-      });
-      return await res.json();
-  } catch (err) {
-      return console.log(err);
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    });
+    const res_1 = await res.json();
+    return console.log(res_1);
+  } catch (error) {
+    return console.log(error);
   }
 }
 
