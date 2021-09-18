@@ -14,7 +14,7 @@ class PromptContainer extends Component {
     }
   }
 
-  componentDidMount = () => {      
+  componentDidMount = () => {
     getData('https://strange-prompts-api.herokuapp.com/api/v1/prompts')
       .then(data => this.setState({ allPrompts: data }))
       .then(data => getData('https://strange-prompts-api.herokuapp.com/api/v1/favorites')
@@ -27,13 +27,13 @@ class PromptContainer extends Component {
     return favorites.map((prompt) => {
       return {
         id: prompt.id,
-        character: this.state.allPrompts[prompt.character].character,
-        setting: this.state.allPrompts[prompt.setting].setting,
+        character: this.state.allPrompts[prompt.character -1].character,
+        setting: this.state.allPrompts[prompt.setting -1].setting,
         problem: this.state.allPrompts[prompt.problem -1].problem
       }
     })
   }
-  
+
   render = () => {
     const faveCards = this.state.favorites.map(compiled => {
       return (
@@ -45,7 +45,7 @@ class PromptContainer extends Component {
           />
         )
     })
-    
+
     return (
      <div className='prompts-collection'>
         {/* {this.state.error && <h2>Oh no!</h2>} */}
