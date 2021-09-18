@@ -1,7 +1,7 @@
 import './PromptContainer.css';
 import PromptCard from '../PromptCard/PromptCard'
 import React, { Component } from 'react';
-import { getData } from '../utils';
+import { getData, deleteData } from '../utils';
 
 
 class PromptContainer extends Component {
@@ -15,12 +15,16 @@ class PromptContainer extends Component {
   }
 
   componentDidMount = () => {
+    this.makeFetch()
+  }
+
+  makeFetch(){
     getData('https://strange-prompts-api.herokuapp.com/api/v1/prompts')
-      .then(data => this.setState({ allPrompts: data }))
-      .then(data => getData('https://strange-prompts-api.herokuapp.com/api/v1/favorites')
-        .then(data => this.makeFavorites(data))
-        .then(faves => this.setState({favorites: faves}))
-        )
+    .then(data => this.setState({ allPrompts: data }))
+    .then(data => getData('https://strange-prompts-api.herokuapp.com/api/v1/favorites')
+      .then(data => this.makeFavorites(data))
+      .then(faves => this.setState({favorites: faves}))
+      )
   }
 
   makeFavorites = (favorites) => {
@@ -34,6 +38,14 @@ class PromptContainer extends Component {
     })
   }
 
+  deleteFavorite = (num) => {
+    const idInfo = {
+      id: num
+    }
+    deleteData('https://strange-prompts-api.herokuapp.com/', idInfo)
+    this.makeFetch()
+  }
+
   render = () => {
     const faveCards = this.state.favorites.map(compiled => {
       return (
@@ -42,13 +54,14 @@ class PromptContainer extends Component {
             character={compiled.character}
             setting={compiled.setting}
             problem={compiled.problem}
+            deleteFavorite={this.deleteFavorite}
+            key={compiled.id}
           />
         )
     })
 
     return (
      <div className='prompts-collection'>
-        {/* {this.state.error && <h2>Oh no!</h2>} */}
         {!this.state.favorites ? <h3>Loading…</h3> : faveCards}
      </div>
    )

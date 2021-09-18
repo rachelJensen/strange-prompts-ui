@@ -27,7 +27,7 @@ const postData = async (url, body) => {
 const deleteData = async (url, id) => {
   try {
     const res = await fetch(url, {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
