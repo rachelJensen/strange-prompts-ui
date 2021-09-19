@@ -15,12 +15,19 @@ describe('User favorite prompts flows', () => {
 
     it('Should display all the favorites saved prompts', () => {
         cy.get('.prompts-collection').should('be.visible')
+          .get('.prompt-card').should('be.visible')
+    });
+
+    it('Should display card of the favorite saved prompts', () => {
+        cy.get('.prompt-card').should('be.visible')
+          .get('p').should('be.visible')
+          .get('.delete-btn').should('be.visible')
     });
 
     it('Should be able to click on the website title and page updates URL and display the main view', () => {
         cy.get('h1').click()
         .should('have.class', 'title')
-        cy.url().should('not.eq', 'http://localhost:3000/saved-prompts')
-     })
+        cy.url().should('include', 'http://localhost:3000')
+    })
 
 })
