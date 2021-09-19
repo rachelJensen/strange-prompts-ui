@@ -47,9 +47,6 @@ class PromptSection extends Component {
       problem: indices[2]
     }
 
-    console.log(formattedFave)
-
-    //getting a cors error, but is hitting the API
     postData('https://strange-prompts-api.herokuapp.com/api/v1/favorites', formattedFave)
   }
 
@@ -57,9 +54,10 @@ class PromptSection extends Component {
     return (
        <div className="prompt-section">
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
-           <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
-           <button className="save" onClick={this.saveFavorite}>Add to favorites</button>
-           {/* <PromptForm /> */}
+           <div className="btn-container">
+            <button className="make-new" onClick={this.createRandomPrompt}>Get New Prompt</button>
+            <button className="save" onClick={this.saveFavorite}>Save to Favorites</button>
+          </div>
        </div>
     )
   }
