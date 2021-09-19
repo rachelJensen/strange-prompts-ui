@@ -63,9 +63,12 @@ class PromptContainer extends Component {
  
   render = () => {
     return (
-     <div className='prompts-collection'>
-        {!this.state.favorites ? <h3>Loading…</h3> : this.createPromptCard()}
-     </div>
+     <main className='prompts-collection'>
+        <section className="prompts-style">
+          {/* {this.state.error && <h2>Oh no!</h2>} */}
+          {!this.state.favorites ? <h3>Loading…</h3> : this.createPromptCard()}
+        </section>
+     </main>
    )
   }
 }
