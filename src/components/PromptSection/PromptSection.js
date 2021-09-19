@@ -48,7 +48,7 @@ class PromptSection extends Component {
     }
 
     console.log(formattedFave)
-    
+
     //getting a cors error, but is hitting the API
     postData('https://strange-prompts-api.herokuapp.com/api/v1/favorites', formattedFave)
   }
@@ -58,7 +58,7 @@ class PromptSection extends Component {
        <div className="prompt-section">
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
            <button onClick={this.createRandomPrompt}>Generate New Prompt</button>
-           <button onClick={this.saveFavorite}>Add to favorites</button>
+           <button className="save" onClick={this.saveFavorite}>Add to favorites</button>
            {/* <PromptForm /> */}
        </div>
     )

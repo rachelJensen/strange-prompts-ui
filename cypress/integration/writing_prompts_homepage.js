@@ -10,7 +10,6 @@ describe('User writing prompt flows', () => {
         problem: 'with writer block'
     }]
   })
-
     cy.visit('http://localhost:3000')
   })
 
@@ -32,11 +31,24 @@ describe('User writing prompt flows', () => {
      cy.get('.prompt-section').should('be.visible')
   })
 
-  it('Should add shown prompt to favorites when add to favorites button is clicked', () => {
-    //cy.
-  })
+  describe('User favorite flows', () => {
 
-  it('Should show prompt when generate new prompt button is selected', () => {
+    it('Should add shown prompt to favorites when add to favorites button is clicked', () => {
+        cy.intercept('GET', 'https://strange-prompts-api.herokuapp.com/api/v1/favorites', {
+            statusCode: 201,
+            body: []
+        })
+        cy.visit('http://localhost:3000/saved-prompts')
+        .get('h1').click()
+        cy.get('.save').click()
+        cy.get('.nav-btns').click()
+
+        //   .get('.delete-btn').should('be.visible')
+      })
+
+      // it('Should show prompt when generate new prompt button is selected', () => {
+        //     cy.get('.prompt-section').should('be.visible')
+        // })
 
   })
-})
+});
