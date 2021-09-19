@@ -2,6 +2,7 @@ describe('User favorite prompts flows', () => {
 
     beforeEach(() => {
         cy.visit('http://localhost:3000/saved-prompts')
+        cy.intercept('GET', 'https://strange-prompts-api.herokuapp.com/api/v1/favorites')
     })
 
     it('Should confirm that true is equal to true', () => {
