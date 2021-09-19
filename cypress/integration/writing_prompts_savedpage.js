@@ -16,4 +16,11 @@ describe('User favorite prompts flows', () => {
     it('Should display all the favorites saved prompts', () => {
         cy.get('.prompts-collection').should('be.visible')
     });
+
+    it('Should be able to click on the website title and page updates URL and display the main view', () => {
+        cy.get('h1').click()
+        .should('have.class', 'title')
+        cy.url().should('not.eq', 'http://localhost:3000/saved-prompts')
+     })
+
 })
