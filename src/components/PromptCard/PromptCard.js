@@ -1,11 +1,10 @@
 import './PromptCard.css';
 
-const PromptCard = ({id, character, setting, problem}) => {
+const PromptCard = ({id, character, setting, problem, deleteFavorite, key}) => {
   return (
-      <div className="prompt-card-section" key={id}>
-          {/* <h4>PromptCard Section</h4> */}
+      <div className="prompt-card" >
           <p className='saved-prompt'>{character} {setting} {problem}</p>
-          <button className='delete-btn'>delete</button>
+          <button onClick={() => deleteFavorite(id)}className='delete-btn'>delete</button>
       </div>
   )
 }

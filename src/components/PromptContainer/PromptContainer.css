@@ -1,0 +1,12 @@
+.prompts-collection {
+  display: flex;
+  justify-content: center;
+  margin: 5vw;
+}
+
+.prompts-style {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
