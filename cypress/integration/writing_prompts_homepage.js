@@ -1,5 +1,6 @@
 describe('User writing prompt flows', () => {
 
+
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
@@ -9,7 +10,7 @@ describe('User writing prompt flows', () => {
   })
 
   it('Navbar should contain website title', () => {
-      cy.get('h1').contains('Strange Prompts for a Strange Planet')
+      cy.get('h1').contains('Strange Prompts')
   })
 
   it('Should be able to click on favorites bookmark page updates URL and display favorites', () => {
@@ -23,3 +24,12 @@ describe('User writing prompt flows', () => {
   })
 
 })
+
+
+
+// describe('User writing prompt flows', () => {
+//
+//   it('Navbar should contain website title', () => {
+//     cy.visit('http://localhost:3000')
+//     cy.get('h1').contains('Strange Prompts')
+//   })})
