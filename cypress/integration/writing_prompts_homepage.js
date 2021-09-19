@@ -19,16 +19,6 @@ describe('User writing prompt flows', () => {
   })
 
    it('Should be able to display random writing prompts on load', () => {
-     cy.get('PromptSection').should('be.visible')
+     cy.get('.prompt-section').should('be.visible')
   })
-
 })
-
-
-
-// describe('User writing prompt flows', () => {
-//
-//   it('Navbar should contain website title', () => {
-//     cy.visit('http://localhost:3000')
-//     cy.get('h1').contains('Strange Prompts')
-//   })})
