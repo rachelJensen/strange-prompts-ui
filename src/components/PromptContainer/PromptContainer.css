@@ -1,7 +1,7 @@
 .prompts-collection {
   display: flex;
   justify-content: center;
-  margin: 5vw;
+  margin: 0 5vw;
 }
 
 .prompts-style {
