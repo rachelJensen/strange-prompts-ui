@@ -47,10 +47,12 @@ class PromptContainer extends Component {
     })
 
     return (
-     <div className='prompts-collection'>
-        {/* {this.state.error && <h2>Oh no!</h2>} */}
-        {!this.state.favorites ? <h3>Loading…</h3> : faveCards}
-     </div>
+     <main className='prompts-collection'>
+        <section className="prompts-style">
+          {/* {this.state.error && <h2>Oh no!</h2>} */}
+          {!this.state.favorites ? <h3>Loading…</h3> : faveCards}
+        </section>
+     </main>
    )
   }
 }
