@@ -14,7 +14,7 @@ const Navigation = () => {
             <h2 className="nav-btns" >Favorites</h2>
           </Link>
           </div>
-        <div className="bookmark">  
+        <div className="bookmark">
         </div>
       </div>
   )

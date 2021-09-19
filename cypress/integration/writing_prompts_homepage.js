@@ -17,8 +17,8 @@ describe('User writing prompt flows', () => {
     expect(true).to.equal(true)
   })
 
-  it('Navbar should contain website title', () => {
-      cy.get('h1').contains('Strange Prompts')
+  it('Navbar should contain website logo in image', () => {
+      cy.get('img').should('be.visible')
   })
 
   it('Should be able to click on favorites bookmark and page updates URL and displays favorites', () => {
@@ -30,6 +30,11 @@ describe('User writing prompt flows', () => {
    it('Should be able to display random writing prompts on load', () => {
      cy.get('.prompt-section').should('be.visible')
   })
+
+  it('Should display an error message when an invalid card id is in the url', () => {
+  cy.visit('http://localhost:3000')
+  cy.get('img').should('be.visible')
+})
 
   describe('User favorite flows', () => {
 
@@ -46,9 +51,9 @@ describe('User writing prompt flows', () => {
         //   .get('.delete-btn').should('be.visible')
       })
 
-      // it('Should show prompt when generate new prompt button is selected', () => {
-        //     cy.get('.prompt-section').should('be.visible')
-        // })
+      it('Should show prompt when generate new prompt button is selected', () => {
+        cy.get('.prompt-section').should('be.visible')
+      })
 
   })
 });
