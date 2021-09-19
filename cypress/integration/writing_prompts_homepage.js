@@ -31,8 +31,8 @@ describe('User writing prompt flows', () => {
      cy.get('.prompt-section').should('be.visible')
   })
 
-  it('Should display an error message when an invalid card id is in the url', () => {
-  cy.visit('http://localhost:3000')
+  it('Should display an error message when an invalid id is in the url', () => {
+  cy.visit('http://localhost:3000/1111')
   cy.get('img').should('be.visible')
 })
 
@@ -56,4 +56,4 @@ describe('User writing prompt flows', () => {
       })
 
   })
-});
+})
