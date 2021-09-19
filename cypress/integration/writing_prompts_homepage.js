@@ -1,6 +1,16 @@
 describe('User writing prompt flows', () => {
 
   beforeEach(() => {
+    cy.intercept('GET', 'https://strange-prompts-api.herokuapp.com/api/v1/prompts', {
+      statusCode: 201,
+      body: [{
+        id:1,
+        character: 'A lonely writer',
+        setting: 'at their desk',
+        problem: 'with writer block'
+    }]
+  })
+
     cy.visit('http://localhost:3000')
   })
 
@@ -27,6 +37,6 @@ describe('User writing prompt flows', () => {
   })
 
   it('Should show prompt when generate new prompt button is selected', () => {
-    
+
   })
 })
