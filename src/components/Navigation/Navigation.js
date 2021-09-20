@@ -2,7 +2,6 @@ import './Navigation.css';
 import { Link } from 'react-router-dom';
 import logo from '../../1.png'
 
-
 const Navigation = () => {
   return (
       <div className="navigation-section">
@@ -19,5 +18,6 @@ const Navigation = () => {
       </div>
   )
 }
+
 
 export default Navigation;
