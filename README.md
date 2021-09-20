@@ -14,8 +14,8 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 
 ## Deployed App 
 
-[Strange Prompts for a Strange Planet](https://strange-prompts.herokuapp.com/)
-[Strange Prompts API](https://github.com/rachelJensen/strange-prompts-api)
+- [Strange Prompts for a Strange Planet](https://strange-prompts.herokuapp.com/)
+- [Strange Prompts API](https://github.com/rachelJensen/strange-prompts-api)
 
 
 ### Learning Goals
