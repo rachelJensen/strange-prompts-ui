@@ -20,10 +20,10 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 
 ### Learning Goals
 
-- Independently learn the fundamentals of how to build a server using PostgreSQL and Express
+- Independently learn the fundamentals of building a server using PostgreSQL and Express
 - Build a simple server with GET, POST, and DELETE methods
 - Build a React app that utilizes that backend server
-- Utilize Cypress testing
+- Write Cypress tests to check user interface displays as intended
 
 
 ### Technologies Used
@@ -41,19 +41,19 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 
 ## Future Additions
 
-- *
-- * 
-- *
-
-### Want to Contribute?
-If you would like to contribute, please fork this repository and clone it down to your local machine. Once you've successfully implemented the changes in code necessary for your intended contribution without changing any of the current functionality of main, submit a pull request for authors to review the changes.
+- Add login so individual users can store their favorite prompts
+- Add feature for users to suggest new prompts
+- Add Allow users to save and share short stories with other users of the app
 
 
 ## Contributors
-### Authors
 - [Andrey Bermudez](https://github.com/Andrey-1992)
 - [Rachel Jensen](https://github.com/rachelJensen)
 - [Samantha Brown](https://github.com/Samantha-Brown)
+
+## Resources
+- [CSS Gradient Background Codepen](https://codepen.io/P1N2O/pen/pyBNzX)
+- [Canva](https://www.canva.com/) for logo
 
 **************************************************************************
 
