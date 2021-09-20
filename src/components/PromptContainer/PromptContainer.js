@@ -1,6 +1,7 @@
 import './PromptContainer.css';
 import PromptCard from '../PromptCard/PromptCard'
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getData, deleteData } from '../utils';
 
 
@@ -71,6 +72,15 @@ class PromptContainer extends Component {
      </main>
    )
   }
+}
+
+PromptContainer.propTypes = {
+  allPrompts: PropTypes.array,
+  favorites: PropTypes.array,
+  createPromptCard: PropTypes.func,
+  deleteFavorite: PropTypes.func,
+  makeFavorites: PropTypes.func,
+  makeFetch: PropTypes.func,
 }
 
 export default PromptContainer;
