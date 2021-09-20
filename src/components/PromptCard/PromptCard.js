@@ -1,4 +1,5 @@
 import './PromptCard.css';
+import PropTypes from 'prop-types';
 
 const PromptCard = ({id, character, setting, problem, deleteFavorite, key}) => {
   return (
@@ -7,6 +8,15 @@ const PromptCard = ({id, character, setting, problem, deleteFavorite, key}) => {
           <button onClick={() => deleteFavorite(id)}className='delete-btn'>delete</button>
       </div>
   )
+}
+
+PromptCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  character: PropTypes.string.isRequired,
+  setting: PropTypes.string.isRequired,
+  problem: PropTypes.string.isRequired,
+  deleteFavorite: PropTypes.func.isRequired,
+  key: PropTypes.number.isRequired
 }
 
 export default PromptCard;
