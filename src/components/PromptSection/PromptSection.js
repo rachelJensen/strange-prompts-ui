@@ -10,6 +10,7 @@ class PromptSection extends Component {
     this.state = {
       promptsData: [],
       randomPrompt: {},
+      isDisabled: false,
     }
   }
 
@@ -31,6 +32,7 @@ class PromptSection extends Component {
     }, {indices: []})
 
     this.setState({ randomPrompt: prompt });
+    this.setState({isDisabled: false});
   }
 
   assignRandomIndex = () => {
@@ -46,6 +48,7 @@ class PromptSection extends Component {
     }
 
     postData('https://strange-prompts-api.herokuapp.com/api/v1/favorites', formattedFave)
+    this.setState({isDisabled: true});
   }
 
   render() {
@@ -54,7 +57,7 @@ class PromptSection extends Component {
            <RandomPrompt randomPrompt={this.state.randomPrompt}/>
            <div className="btn-container">
             <button className="make-new" onClick={this.createRandomPrompt}>Get New Prompt</button>
-            <button className="save" onClick={this.saveFavorite}>Save to Favorites</button>
+            <button className="save" disabled={this.state.isDisabled} onClick={this.saveFavorite}>Save to Favorites</button>
           </div>
        </div>
     )
