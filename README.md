@@ -1,4 +1,4 @@
-# Rancid Tomatillos
+# Strange Prompts for a Strange Planet
 
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
