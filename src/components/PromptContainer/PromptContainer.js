@@ -66,7 +66,6 @@ class PromptContainer extends Component {
     return (
      <main className='prompts-collection'>
         <section className="prompts-style">
-          {/* {this.state.error && <h2>Oh no!</h2>} */}
           {!this.state.favorites ? <h3>Loading…</h3> : this.createPromptCard()}
         </section>
      </main>
@@ -77,6 +76,8 @@ class PromptContainer extends Component {
 PromptContainer.propTypes = {
   allPrompts: PropTypes.array,
   favorites: PropTypes.array,
+  idInfo: PropTypes.object,
+  error: PropTypes.string,
   createPromptCard: PropTypes.func,
   deleteFavorite: PropTypes.func,
   makeFavorites: PropTypes.func,

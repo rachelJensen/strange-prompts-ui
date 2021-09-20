@@ -64,6 +64,9 @@ class PromptSection extends Component {
 PromptSection.propTypes = {
   promptsData: PropTypes.array,
   randomPrompt: PropTypes.object,
+  error: PropTypes.string,
+  fragments: PropTypes.array,
+  formattedFave: PropTypes.object,
   createRandomPrompt: PropTypes.func,
   assignRandomIndex: PropTypes.func,
 }
