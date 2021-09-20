@@ -52,11 +52,11 @@ class PromptContainer extends Component {
       return (
           <PromptCard
             id={compiled.id}
+            key={compiled.id}
             character={compiled.character}
             setting={compiled.setting}
             problem={compiled.problem}
             deleteFavorite={this.deleteFavorite}
-            key={compiled.id}
           />
         )
     })
