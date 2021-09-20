@@ -1,4 +1,5 @@
 # Strange Prompts for a Strange Planet
+## A sci-fi writing prompt generator 
 
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
