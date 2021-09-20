@@ -1,4 +1,5 @@
 import './Header.css';
+import PropTypes from 'prop-types';
 import Navigation from '../Navigation/Navigation';
 
 const Header = () => {
@@ -7,6 +8,10 @@ const Header = () => {
           <Navigation />
       </div>
   )
+}
+
+Header.propTypes = {
+  Navigation: PropTypes.element
 }
 
 export default Header;
