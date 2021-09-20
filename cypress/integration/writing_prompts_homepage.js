@@ -32,12 +32,12 @@ describe('User writing prompt flows', () => {
   })
 
   it('Should display an error message when an invalid id is in the url', () => {
-  cy.visit('http://localhost:3000/1111')
-  cy.get('img').should('be.visible')
+    cy.visit('http://localhost:3000/1111')
+    cy.get('img').should('be.visible')
   })
 
   it('Should show prompt when generate new prompt button is selected', () => {
-  cy.get('.prompt-section').should('be.visible')
+    cy.get('.prompt-section').should('be.visible')
   })
 
-  });
+});
