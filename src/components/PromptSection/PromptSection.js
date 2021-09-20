@@ -1,8 +1,7 @@
 import './PromptSection.css';
 import React, { Component } from 'react';
-import PromptForm from '../PromptForm/PromptForm';
 import RandomPrompt from '../RandomPrompt/RandomPrompt';
-// import promptsData from '../prompts-data';
+import PropTypes from 'prop-types';
 import { getData, postData } from '../utils';
 
 class PromptSection extends Component {
@@ -11,7 +10,6 @@ class PromptSection extends Component {
     this.state = {
       promptsData: [],
       randomPrompt: {},
-      // error: ''
     }
   }
 
@@ -61,6 +59,13 @@ class PromptSection extends Component {
        </div>
     )
   }
+}
+
+PromptSection.propTypes = {
+  promptsData: PropTypes.array,
+  randomPrompt: PropTypes.object,
+  createRandomPrompt: PropTypes.func,
+  assignRandomIndex: PropTypes.func,
 }
 
 export default PromptSection;
