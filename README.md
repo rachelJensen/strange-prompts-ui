@@ -21,7 +21,7 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 ![recording (2)](https://user-images.githubusercontent.com/79541611/134383492-ae02b5d8-11ab-4d61-b6d2-1ff89b122153.gif)
 
 
-### Learning Goals
+## Learning Goals
 
 - Independently learn the fundamentals of building a server using PostgreSQL and Express
 - Build a simple server with GET, POST, and DELETE methods
@@ -29,7 +29,7 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 - Write Cypress tests to check user interface displays as intended
 
 
-### Technologies Used
+## Technologies Used
 
 <p text-align="center"> 
     <img alt="React Badge" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)" />
