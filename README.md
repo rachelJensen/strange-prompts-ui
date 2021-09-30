@@ -18,6 +18,8 @@ The goal of this Mod3 group [project](https://frontend.turing.edu/projects/modul
 - [Strange Prompts for a Strange Planet](https://strange-prompts.herokuapp.com/) - a sci-fi writing prompt generator
 - [Strange Prompts API](https://github.com/rachelJensen/strange-prompts-api)
 
+![recording (2)](https://user-images.githubusercontent.com/79541611/134383492-ae02b5d8-11ab-4d61-b6d2-1ff89b122153.gif)
+
 
 ### Learning Goals
 
